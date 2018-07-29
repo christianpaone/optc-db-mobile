@@ -1,7 +1,7 @@
 <template>
   <v-app :dark="theme">
     <v-toolbar app>
-      <v-toolbar-side-icon @click.native="drawerToggle" v-if="!blockDrawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon v-on:click.native.stop="drawerToggle" v-if="!blockDrawer"></v-toolbar-side-icon>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn 
@@ -20,11 +20,14 @@
       v-model="drawer"
       v-if="characterDrawer"
       touchless
+      fixed
+      temporary
+      clipped
       app
       >
         <CharacterFilters></CharacterFilters>
       </v-navigation-drawer>
-    <v-content class="app-content">
+    <v-content>
         <router-view  id = "mainContent" ></router-view>
     </v-content>
   </v-app>
@@ -116,11 +119,8 @@ body {
   /* Apply this to v-bottom-nav if necessary. */
   margin-bottom: constant(safe-area-inset-bottom);
   margin-bottom: env(safe-area-inset-bottom);
-}
-.app-content{
-  background-image: url('./assets/img/bg-app.png');
-  background-repeat: repeat;
-}
-.over{
+}html {
+-ms-touch-action: manipulation;
+touch-action: manipulation;
 }
 </style>

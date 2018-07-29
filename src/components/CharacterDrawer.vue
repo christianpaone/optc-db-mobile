@@ -1,6 +1,6 @@
 <template>
       <v-list class="nomargin">
-        <v-list-tile class="clearFilters" @click="clearFilters">
+        <v-list-tile class="clearFilters" v-on:click.native.stop="clearFilters">
           <v-list-tile-content>
             <v-list-tile-title  class="text-xs-center">CLEAR FILTERS</v-list-tile-title>
           </v-list-tile-content>
@@ -12,7 +12,7 @@
                v-for="(item,i) in Types"
                :key="i+'-type'"
                :class="item.width"
-               @click="setTypeFilter(i)"
+               v-on:click.native.stop="setTypeFilter(i)"
             >
                 <v-list-tile class="filter" v-bind:class="item.filter+' '+item.active">    
                 <v-list-tile-content>
@@ -27,7 +27,7 @@
                v-for="(item,i) in Classes"
                :key="i+'-class'"
                :class="item.width"
-               @click="setClassFilter(i)"
+               v-on:click.native.stop="setClassFilter(i)"
             >
                 <v-list-tile class="filter" v-bind:class="item.filter+' '+item.active">    
                 <v-list-tile-content>
@@ -42,7 +42,7 @@
                v-for="(item,i) in Stars"
                :key="i+'-stars'"
                :class="item.width"
-               @click="setStarsFilter(i)"
+               v-on:click.native.stop="setStarsFilter(i)"
             >
             <v-list-tile class="filter" v-bind:class="item.active">    
                 <v-list-tile-content class="text-xs-center">

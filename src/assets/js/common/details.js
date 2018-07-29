@@ -10676,11 +10676,11 @@ window.details = {
                 "cooldown": [ 14, 8 ]
             },
             {
-                "description": "Recovers 15x character's RCV in HP. Removes Paralysis, Poison, RCV Down and Blindness",
+                "description": "Recovers 15x character's RCV in HP. Removes Paralysis, Poison, RCV DOWN and Blindness",
                 "cooldown": [ 19, 13 ]
             },
             {
-                "description": "Recovers 50x character's RCV in HP. Removes Paralysis, Poison, RCV Down and Blindness",
+                "description": "Recovers 50x character's RCV in HP. Removes Paralysis, Poison, RCV DOWN and Blindness",
                 "cooldown": [ 24, 18 ]
             },
         ],
@@ -10695,11 +10695,11 @@ window.details = {
                 "cooldown": [ 14, 8 ]
             },
             {
-                "description": "Recovers 15x character's RCV in HP. Removes Paralysis, Poison, RCV Down and Blindness",
+                "description": "Recovers 15x character's RCV in HP. Removes Paralysis, Poison, RCV DOWN and Blindness",
                 "cooldown": [ 19, 13 ]
             },
             {
-                "description": "Recovers 50x character's RCV in HP. Removes Paralysis, Poison, RCV Down and Blindness",
+                "description": "Recovers 50x character's RCV in HP. Removes Paralysis, Poison, RCV DOWN and Blindness",
                 "cooldown": [ 24, 18 ]
             },
         ],
@@ -13245,10 +13245,59 @@ window.details = {
         specialNotes: "#{gOrbs}"
     },
     1245: {// Event Luffy
-        captain: "Boosts ATK of Fighter characters by 1.75x. If HP is below 10%, boosts ATK of Fighter characters by 3x instead.",
+        captain: {
+            "base": "Boosts ATK of Fighter characters by 3x if HP is below 10%, by 1.75x otherwise",
+            "level1": "Boosts ATK of Fighter characters by 3.25x if HP is below 10%, by 1.75x otherwise",
+        },
         special: "Deals random [QCK] damage to all enemies and boosts ATK of Fighter characters by 1.3x for 1 turn. If \"Firefly Light, Fiery Doll\" is used again in the same turn the special is activated in, boosts ATK of Fighter characters by 2x instead.",
         specialName:"Gomu Gomu no Stamp Gatling",
         specialNotes: "Firefly Light, Fiery Doll is Event Ace's special ability.",
+        sailor: {
+            "base": "None",
+            "level1": "Makes [QCK] orbs \"beneficial\" for Fighter characters",
+            "level2": "Reduces Paralysis duration by 1 turn",
+        },
+        limit: [
+            { "description": "Boosts base ATK by 20" },
+            { "description": "Boosts base HP by 30" },
+            { "description": "Boosts base RCV by 30" },
+            { "description": "Acquire Potential 1: [STR] Damage Reduction" },
+            { "description": "Reduce base Special Cooldown by 2 turns" },
+            { "description": "Boosts base RCV by 30" },
+            { "description": "Boosts base ATK by 30" },
+            { "description": "Acquire Sailor Ability 1: Makes [QCK] orbs \"beneficial\" for Fighter characters" },
+            { "description": "Boosts base HP by 40" },
+            { "description": "Boosts base ATK by 50" },
+            { "description": "Boosts base HP by 50" },
+            { "description": "Reduce base Special Cooldown by 3 turns" },
+            { "description": "Acquire Sailor Ability 2: Reduces Paralysis duration by 1 turn" },
+            { "description": "Acquire new Captain Ability: Boosts ATK of Fighter characters by 3.25x if HP is below 10%, by 1.75x otherwise" },
+            { "description": "Acquire Potential 2: Enrage" },
+        ],
+        limitNotes: "This Limit Break is exclusive to Global ONLY",
+        potential: [
+            {
+                "Name": "[STR] Damage Reduction",
+                "description": [
+                    "Level 1: Reduce damage taken from [STR] characters by 1%",
+                    "Level 2: Reduce damage taken from [STR] characters by ?%",
+                    "Level 3: Reduce damage taken from [STR] characters by ?%",
+                    "Level 4: Reduce damage taken from [STR] characters by ?%",
+                    "Level 5: Reduce damage taken from [STR] characters by ?%"
+                ]
+            },
+            {
+                "Name": "Enrage",
+                "description": [
+                    "Level 1: Boosts base ATK by 30",
+                    "Level 2: Boosts base ATK by ?",
+                    "Level 3: Boosts base ATK by ?",
+                    "Level 4: Boosts base ATK by ?",
+                    "Level 5: Boosts base ATK by ?"
+                ]
+            },
+        ],
+        potentialNotes: "#{enrage}"
     },
     1246: {// Event Ace
         captain: "Boosts ATK of Fighter characters by 1.2x",
@@ -13256,9 +13305,57 @@ window.details = {
         specialName:"Firefly Light, Fiery Doll",
     },
     1247: {// Event Ace
-        captain: "Boosts HP of Fighter characters by 1.2x and their ATK by 2.75x if they have a matching orb, by 2x otherwise",
+        captain: {
+            "base": "Boosts HP of Fighter characters by 1.2x and their ATK by 2.75x if they have a matching orb, by 2x otherwise",
+            "level1": "Boosts HP of Fighter characters by ?x and their ATK by 3x if they have a matching orb, by 2x otherwise",
+        },
         special: "Reduces crew's current HP by 90%, deals 55x character's ATK in typeless damage to all enemies and boosts ATK of Fighter characters by 1.3x for 1 turn. If \"Gomu Gomu no Stamp Gatling\" is used again in the same turn the special is activated in, boosts ATK of Fighter characters by 2x instead.",
         specialName:"Firefly Light, Fiery Doll",
+        sailor: {
+            "base": "None",
+            "level1": "Makes [STR] orbs \"beneficial\" for Fighter characters",
+            "level2": "When HP is below 10% at the start of the turn, boosts base ATK of Fighter characters by 100",
+        },
+        limit: [
+            { "description": "Boosts base ATK by 20" },
+            { "description": "Boosts base HP by 30" },
+            { "description": "Boosts base RCV by 30" },
+            { "description": "Acquire Potential 1: [DEX] Damage Reduction" },
+            { "description": "Reduce base Special Cooldown by 2 turns" },
+            { "description": "Boosts base RCV by 30" },
+            { "description": "Boosts base ATK by 30" },
+            { "description": "Acquire Sailor Ability 1: Makes [STR] orbs \"beneficial\" for Fighter characters" },
+            { "description": "Boosts base HP by 40" },
+            { "description": "Boosts base ATK by 50" },
+            { "description": "Boosts base HP by 50" },
+            { "description": "Reduce base Special Cooldown by 3 turns" },
+            { "description": "Acquire Sailor Ability 2: When HP is below 10% at the start of the turn, boosts base ATK of Fighter characters by 100" },
+            { "description": "Acquire new Captain Ability: Boosts HP of Fighter characters by ?x and their ATK by 3x if they have a matching orb, by 2x otherwise" },
+            { "description": "Acquire Potential 2: Enrage" },
+        ],
+        limitNotes: "This Limit Break is exclusive to Global ONLY",
+        potential: [
+            {
+                "Name": "[DEX] Damage Reduction",
+                "description": [
+                    "Level 1: Reduce damage taken from [DEX] characters by 1%",
+                    "Level 2: Reduce damage taken from [DEX] characters by ?%",
+                    "Level 3: Reduce damage taken from [DEX] characters by ?%",
+                    "Level 4: Reduce damage taken from [DEX] characters by ?%",
+                    "Level 5: Reduce damage taken from [DEX] characters by ?%"
+                ]
+            },
+            {
+                "Name": "Slot Bind Self-reduction",
+                "description": [
+                    "Level 1: Reduces Slot Bind duration by 1 turn on this character",
+                    "Level 2: Reduces Slot Bind duration by ? turns on this character",
+                    "Level 3: Reduces Slot Bind duration by ? turns on this character",
+                    "Level 4: Reduces Slot Bind duration by ? turns on this character",
+                    "Level 5: Reduces Slot Bind duration by ? turns on this character"
+                ]
+            },
+        ]
     },
     1248: {// Kimono Marco
         captain: "Boosts ATK of Fighter and Powerhouse characters by 1.3x",
@@ -30616,19 +30713,379 @@ window.details = {
         specialName: "Moo Golova",
     },
     2179: {//Blackback
-        captain: "Boosts ATK of Fighter and Cerebral characters by 1.5x",
+        captain: "Boosts ATK of Fighter and Powerhouse characters by 1.5x",
         special: "Reduces damage received by 50% for 1 turn and boosts the Color Affinity of [STR] characters by 1.25x for 1 turn.",
         specialName: "Guardian's One Arm Back Throw",
     },
-    2200: {//Doflamingo Raid v2
+    2180: {//Whitebeard&Marco
+        captain: {
+            "character1": "Boosts ATK of PSY characters by 3.5x, boosts ATK of all other characters by 2.75x, reduce damage received by 15% and makes [PSY] orbs \"beneficial\" to all characters",
+            "character2": "Boosts ATK of INT characters by 3.5x, boosts ATK of all other characters by 2.75x, boosts RCV of all characters by 1.25x and makes [PSY] orbs \"beneficial\" to all characters",
+            "combined": "Boosts ATK of [PSY] and [INT] characters by 4.25x, boosts ATK of all other characters by 3x, boosts RCV of all characters by 1.5x, reduce damage received by 20% and makes [PSY] and [INT] orbs \"beneficial\" to all characters"
+        },
+        special: "Cuts the current HP of each enemy by 30%, recovers 20,000 HP, randomizes all orbs into either [PSY], [INT] or [RCV] orbs and becomes Whitebeard & Marco for 3 turns",
+        specialNotes: "Change Action: When Change is activated, reduces Paralysis and Silence duration by 1 turn, makes [RCV] orbs \"beneficial\" for all characters for 1 turn and changes their own orb into a [RCV] orb<br>#{beneficial}",
+        specialName: "Immortal Blue Flame Shockwave",
+        sailor: {
+            "character1": "Boosts base ATK of [PSY] and [INT] characters by 75",
+            "character2": "Boosts base HP and RCV of [PSY] and [INT] characters by 75",
+            "combined": "Boosts base ATK, HP and RCV of [PSY] and [INT] characters by 100"
+        },
+    },
+    2181: {//Whitebeard&Marco
+        captain: {
+            "character1": "Boosts ATK of PSY characters by 3.5x, boosts ATK of all other characters by 2.75x, reduce damage received by 15% and makes [PSY] orbs \"beneficial\" to all characters",
+            "character2": "Boosts ATK of INT characters by 3.5x, boosts ATK of all other characters by 2.75x, boosts RCV of all characters by 1.25x and makes [PSY] orbs \"beneficial\" to all characters",
+            "combined": "Boosts ATK of [PSY] and [INT] characters by 4.25x, boosts ATK of all other characters by 3x, boosts RCV of all characters by 1.5x, reduce damage received by 20% and makes [PSY] and [INT] orbs \"beneficial\" to all characters"
+        },
+        special: "Cuts the current HP of each enemy by 30%, recovers 20,000 HP, randomizes all orbs into either [PSY], [INT] or [RCV] orbs and becomes Whitebeard & Marco for 3 turns",
+        specialNotes: "Change Action: When Change is activated, reduces Paralysis and Silence duration by 1 turn, makes [RCV] orbs \"beneficial\" for all characters for 1 turn and changes their own orb into a [RCV] orb<br>#{beneficial}",
+        specialName: "Immortal Blue Flame Shockwave",
+        sailor: {
+            "character1": "Boosts base ATK of [PSY] and [INT] characters by 75",
+            "character2": "Boosts base HP and RCV of [PSY] and [INT] characters by 75",
+            "combined": "Boosts base ATK, HP and RCV of [PSY] and [INT] characters by 100",
+            "level1": "Completely resists Paralysis and Silence on this character"
+        },
+        potential: [
+            {
+                "Name": "[PSY] Damage Reduction",
+                "description": [
+                    "Level 1: Reduce damage taken from [PSY] characters by 1%",
+                    "Level 2: Reduce damage taken from [PSY] characters by 2%",
+                    "Level 3: Reduce damage taken from [PSY] characters by 3%",
+                    "Level 4: Reduce damage taken from [PSY] characters by 5%",
+                    "Level 5: Reduce damage taken from [PSY] characters by 7%"
+                ]
+            },
+            {
+                "Name": "[INT] Damage Reduction",
+                "description": [
+                    "Level 1: Reduce damage taken from [INT] characters by 1%",
+                    "Level 2: Reduce damage taken from [INT] characters by 2%",
+                    "Level 3: Reduce damage taken from [INT] characters by 3%",
+                    "Level 4: Reduce damage taken from [INT] characters by 5%",
+                    "Level 5: Reduce damage taken from [INT] characters by 7%"
+                ]
+            },
+            {
+                "Name": "Slot Bind Self-reduction",
+                "description": [
+                    "Level 1: Reduces Slot Bind duration by 3 turn on this character",
+                    "Level 2: Reduces Slot Bind duration by 5 turn on this character",
+                    "Level 3: Reduces Slot Bind duration by 7 turn on this character",
+                    "Level 4: Reduces Slot Bind duration by 10 turn on this character",
+                    "Level 5: Reduces Slot Bind completely on this character"
+                ]
+            },
+        ],
+    },
+    2182: {//Boa Hancock
+        captain: "Boosts ATK of [PSY] and [INT] characters by ?x and their RCV by ?x",
+        special: "Delays all enemies for 1 turn. If your crew has 3 or more [INT] characters, changes [BLOCK] orbs into Matching orbs and boosts ATK of [PSY] and [INT] characters by 2x for 1 turn",
+        specialName: "Mero Mero Slave Arrow",
+        sailor: "Boosts base RCV of [PSY] and [INT] characters by 50",
+    },
+    2183: {//Boa Hancock
+        captain: "Boosts ATK of [PSY] and [INT] characters by 2.5x and their RCV by 1.2x",
+        special: "Delays all enemies for 1 turn. If your crew has 3 or more [INT] characters, changes [BLOCK] orbs into Matching orbs and boosts ATK of [PSY] and [INT] characters by 2x for 1 turn",
+        specialName: "Mero Mero Slave Arrow",
+        sailor: {
+            "base": "Boosts base RCV of [PSY] and [INT] characters by 50",
+            "level1": "Makes [STR], [QCK], [DEX] and [INT] orbs \"beneficial\" for this character if your Captain is a [PSY] or [INT] character",
+        },
+        potential: [
+            {
+                "Name": "Slot Bind Self-reduction",
+                "description": [
+                    "Level 1: Reduces Slot Bind duration by 1 turn on this character",
+                    "Level 2: Reduces Slot Bind duration by 2 turn on this character",
+                    "Level 3: Reduces Slot Bind duration by 3 turn on this character",
+                    "Level 4: Reduces Slot Bind duration by 4 turn on this character",
+                    "Level 5: Reduces Slot Bind duration by 5 turn on this character"
+                ]
+            },
+            {
+                "Name": "Pinch Healing",
+                "description": [
+                    "Level 1: If HP is below 10% at the start of the turn, heals for 1x this character's RCV at the end of the turn each time you hit a PERFECT with this character",
+                    "Level 2: If HP is below 10% at the start of the turn, heals for 1.5x this character's RCV at the end of the turn each time you hit a PERFECT with this character",
+                    "Level 3: If HP is below 15% at the start of the turn, heals for 1.5x this character's RCV at the end of the turn each time you hit a PERFECT with this character",
+                    "Level 4: If HP is below 20% at the start of the turn, heals for 1.5x this character's RCV at the end of the turn each time you hit a PERFECT with this character",
+                    "Level 5: If HP is below 30% at the start of the turn, heals for 1.5x this character's RCV at the end of the turn each time you hit a PERFECT with this character"
+                ]
+            },
+        ]
+    },
+    2184: {//Mihawk
+        captain: "Boosts ATK of Slasher characters by ?x and boosts HP of [PSY] characters by ?x",
+        special: "Deal 50x character's ATK in typeless damage to one enemy and reduces enemy Barrier duration by 1 turn. If your crew has 3 or more [PSY] characters, changes own orb into [PSY] and amplifies the effect of orbs by 2x for 1 turn",
+        specialName: "Hawk Eyes' Instantaneous Killing",
+        sailor: "Boosts base ATK and HP of [PSY] and [INT] characters by 50",
+    },
+    2185: {//Mihawk
+        captain: "Boosts ATK of Slasher characters by 2.5x and boosts HP of [PSY] characters by 1.3x",
+        special: "Deal 50x character's ATK in typeless damage to one enemy and reduces enemy Barrier duration by 1 turn. If your crew has 3 or more [PSY] characters, changes own orb into [PSY] and amplifies the effect of orbs by 2x for 1 turn",
+        specialName: "Hawk Eyes' Instantaneous Killing",
+        sailor: {
+            "base": "Boosts base ATK and HP of [PSY] and [INT] characters by 50",
+            "level1": "Boosts this character's attack against [INT] characters by 1.1x",
+        },
+        potential: [
+            {
+                "Name": "Enrage",
+                "description": [
+                    "Level 1: Boosts base ATK by 30",
+                    "Level 2: Boosts base ATK by 60",
+                    "Level 3: Boosts base ATK by 90",
+                    "Level 4: Boosts base ATK by 120",
+                    "Level 5: Boosts base ATK by 150"
+                ]
+            },
+            {
+                "Name": "Critical Hit",
+                "description": [
+                    "Level 1: If you hit a perfect with this character, there is a 30% chance to deal 4% of this character's attack in extra damage",
+                    "Level 2: If you hit a perfect with this character, there is a 40% chance to deal 5% of this character's attack in extra damage",
+                    "Level 3: If you hit a perfect with this character, there is a 50% chance to deal 6% of this character's attack in extra damage",
+                    "Level 4: If you hit a perfect with this character, there is a 60% chance to deal 7% of this character's attack in extra damage",
+                    "Level 5: If you hit a perfect with this character, there is a 70% chance to deal 8% of this character's attack in extra damage"
+                ]
+            },
+        ],
+        potentialNotes: "#{enrage}"
+    },
+    2186: {//Kizaru
+        captain: "Reduces cooldown of all specials by ? turn at the start of the fight, boosts ATK of Shooter and Fighter characters by ?x and their HP by ?x",
+        special: "Reduces Special Cooldown of [PSY] and [INT] characters by 1 turn and changes adjacent orbs into Matching Orbs. If your Captain is a [PSY] or [INT] character, locks the chain multiplier at 3x for 1 turn.",
+        specialName: "Amaterasu Descent",
+        sailor: "Boosts base ATK, HP and RCV of [PSY] and [INT] characters by 30",
+    },
+    2187: {//Kizaru
+        captain: "Reduces cooldown of all specials by 1 turn at the start of the fight, boosts ATK of Shooter and Fighter characters by 2.25x and their HP by 1.25x",
+        special: "Reduces Special Cooldown of [PSY] and [INT] characters by 1 turn and changes adjacent orbs into Matching Orbs. If your Captain is a [PSY] or [INT] character, locks the chain multiplier at 3x for 1 turn.",
+        specialName: "Amaterasu Descent",
+        sailor: {
+            "base": "Boosts base ATK, HP and RCV of [PSY] and [INT] characters by 30",
+            "level1": "Makes [INT] orbs \"beneficial\" for this character",
+        },
+        potential: [
+            {
+                "Name": "[INT] Damage Reduction",
+                "description": [
+                    "Level 1: Reduce damage taken from [INT] characters by 1%",
+                    "Level 2: Reduce damage taken from [INT] characters by 2%",
+                    "Level 3: Reduce damage taken from [INT] characters by 3%",
+                    "Level 4: Reduce damage taken from [INT] characters by 4%",
+                    "Level 5: Reduce damage taken from [INT] characters by 5%"
+                ]
+            },
+            {
+                "Name": "Barrier Penetration",
+                "description": [
+                    "Level 1: This character's normal attack will ignore barriers if HP is above 99% at the start of the turn",
+                    "Level 2: This character's normal attack will ignore barriers if HP is above 99% at the start of the turn",
+                    "Level 3: This character's normal attack will ignore barriers if HP is above 99% at the start of the turn",
+                    "Level 4: This character's normal attack will ignore barriers if HP is above 80% at the start of the turn",
+                    "Level 5: This character's normal attack will ignore barriers if HP is above 50% at the start of the turn"
+                ]
+            },
+        ]
+    },
+    2188: {//Strawberry
+        captain: "Boosts ATK of Slasher and Cerebral characters by ?x and reduce damage received by ?%",
+        special: "Reduces Bind, Despair, ATK DOWN and Chain Multiplier Limit duration by 2 turns, reduces enemy Barrier duration by 1 turn and deals 50,000 fixed damage to one enemy",
+        specialName: "Heartful Twin Slashes",
+        sailor: "When any other [PSY] or [INT] character uses a special, reduces own cooldown by 3 turns",
+    },
+    2189: {//Strawberry
+        captain: "Boosts ATK of Slasher and Cerebral characters by 2.25x and reduce damage received by 10%",
+        special: "Reduces Bind, Despair, ATK DOWN and Chain Multiplier Limit duration by 2 turns, reduces enemy Barrier duration by 1 turn and deals 50,000 fixed damage to one enemy",
+        specialName: "Heartful Twin Slashes",
+        sailor: {
+            "base": "When any other [PSY] or [INT] character uses a special, reduces own cooldown by 3 turns",
+            "level1": "Makes [TND] orbs \"beneficial\" for [PSY] and [INT] characters",
+        },
+        potential: [
+            {
+                "Name": "Critical Hit",
+                "description": [
+                    "Level 1: If you hit a perfect with this character, there is a 20% chance to deal 3% of this character's attack in extra damage",
+                    "Level 2: If you hit a perfect with this character, there is a 30% chance to deal 4% of this character's attack in extra damage",
+                    "Level 3: If you hit a perfect with this character, there is a 40% chance to deal 5% of this character's attack in extra damage",
+                    "Level 4: If you hit a perfect with this character, there is a 50% chance to deal 6% of this character's attack in extra damage",
+                    "Level 5: If you hit a perfect with this character, there is a 60% chance to deal 7% of this character's attack in extra damage"
+                ]
+            },
+            {
+                "Name": "Reduce No Healing duration",
+                "description": [
+                    "Level 1: Reduces No Healing duration by 1 turn",
+                    "Level 2: Reduces No Healing duration by 2 turn",
+                    "Level 3: Reduces No Healing duration by 3 turn",
+                    "Level 4: Reduces No Healing duration by 4 turns",
+                    "Level 5: Reduces No Healing duration by 5 turns"
+                ]
+            },
+        ]
+    },
+    2190: {//Rebecca
+        captain: "Boosts ATK of Striker and Slasher characters proportionally to the crew's current HP, by ?x at max and reduce damage received by ?%",
+        special: "Reduces enemy's Threshold Damage Reduction duration by 5 turns and boosts ATK of Slasher and Striker characters by 1.75x for 1 turn. If your Captain is a Slasher or Striker character, reduces RCV DOWN and Increase Damage Taken duration by 3 turns.",
+        specialName: "Heart-Throbbing Beach Volleyball",
+        sailor: "If your Captain is a Slasher or Striker character, reduces Blindness duration by 5 turns",
+    },
+    2191: {//Rebecca
+        captain: "Boosts ATK of Striker and Slasher characters proportionally to the crew's current HP, by 2.5x at max and reduce damage received by 15%",
+        special: "Reduces enemy's Threshold Damage Reduction duration by 5 turns and boosts ATK of Slasher and Striker characters by 1.75x for 1 turn. If your Captain is a Slasher or Striker character, reduces RCV DOWN and Increase Damage Taken duration by 3 turns.",
+        specialName: "Heart-Throbbing Beach Volleyball",
+        sailor: "If your Captain is a Slasher or Striker character, reduces Blindness duration by 5 turns",
+    },
+    2192: {//Kuma
+        captain: "Boosts ATK of Shooter characters by ?x and recovers ?x character's RCV in HP at the end of each turn",
+        special: "Reduces enemy's Threshold Damage Reduction and Percent Damage Reduction duration by 3 turns and changes adjacent orbs into [RCV] orbs. If there are 2 enemies or more on the stage, instantly defeats one enemy with HP equal to or below 350x character's ATK, cuts the current HP of one enemy by 20% that will ignore damage negating abilities and barriers otherwise",
+        specialName: "Erasing Palm Strike",
+        sailor: "Boosts base HP of Shooter characters by 75",
+    },
+    2193: {//Kuma
+        captain: "Boosts ATK of Shooter characters by 2.5x and recovers 2x character's RCV in HP at the end of each turn",
+        special: "Reduces enemy's Threshold Damage Reduction and Percent Damage Reduction duration by 3 turns and changes adjacent orbs into [RCV] orbs. If there are 2 enemies or more on the stage, instantly defeats one enemy with HP equal to or below 350x character's ATK, cuts the current HP of one enemy by 20% that will ignore damage negating abilities and barriers otherwise",
+        specialName: "Erasing Palm Strike",
+        sailor: "Boosts base HP of Shooter characters by 75",
+        potential: [
+            {
+                "Name": "Reduce No Healing duration",
+                "description": [
+                    "Level 1: Reduces No Healing duration by ? turn",
+                    "Level 2: Reduces No Healing duration by ? turn",
+                    "Level 3: Reduces No Healing duration by ? turn",
+                    "Level 4: Reduces No Healing duration by ? turns",
+                    "Level 5: Reduces No Healing duration by ? turns"
+                ]
+            },
+            {
+                "Name": "Barrier Penetration",
+                "description": [
+                    "Level 1: This character's normal attack will ignore barriers if HP is above ?% at the start of the turn",
+                    "Level 2: This character's normal attack will ignore barriers if HP is above ?% at the start of the turn",
+                    "Level 3: This character's normal attack will ignore barriers if HP is above ?% at the start of the turn",
+                    "Level 4: This character's normal attack will ignore barriers if HP is above ?% at the start of the turn",
+                    "Level 5: This character's normal attack will ignore barriers if HP is above ?% at the start of the turn"
+                ]
+            },
+        ]
+    },
+    2214: {//Reiju
+        captain: "Boosts ATK of all characters by ?x and their RCV by ?x. If you defeat an enemy, increases ATK boost slightly. Stacks up to 8 times to a maximum of ?x.",
+        captainNotes: "If a character dies and revives, it counts as killing a character. If you did not defeat an enemy, lose all ATK boost stacks.",
+        special: [
+            {
+                "description": "Delays all enemies for 1 turn and makes Badly Matching and [BLOCK] orbs not reduce damage for 3 turns.",
+                "cooldown": [ null, null ],
+            },
+            {
+                "description": "Delays all enemies for 1 turn, reduces Paralysis, Bind, Despair and Silence duration by 1 turn and makes Badly Matching and [BLOCK] orbs not reduce damage for 3 turns.",
+                "cooldown": [ null, null ],
+            },
+            {
+                "description": "Delays all enemies for 2 turn, reduces Paralysis, Bind, Despair and Silence duration by 2 turn and makes Badly Matching and [BLOCK] orbs not reduce damage for 3 turns.",
+                "cooldown": [ null, null ],
+            },
+        ],
+        specialName: "Tropical Country Flowers",
+        specialNotes: "#{stages}",
+        sailor: "Reduces Silence duration on this character by 3 turns",
+    },
+    2215: {//Reiju
+        captain: "Boosts ATK of all characters by 1.5x and their RCV by 1.2x. If you defeat an enemy, increases ATK boost slightly. Stacks up to 8 times to a maximum of 3x.",
+        captainNotes: "If a character dies and revives, it counts as killing a character. If you did not defeat an enemy, lose all ATK boost stacks.",
+        special: [
+            {
+                "description": "Delays all enemies for 1 turn and makes Badly Matching and [BLOCK] orbs not reduce damage for 3 turns.",
+                "cooldown": [ null, null ],
+            },
+            {
+                "description": "Delays all enemies for 1 turn, reduces Paralysis, Bind, Despair and Silence duration by 1 turn and makes Badly Matching and [BLOCK] orbs not reduce damage for 3 turns.",
+                "cooldown": [ null, null ],
+            },
+            {
+                "description": "Delays all enemies for 2 turn, reduces Paralysis, Bind, Despair and Silence duration by 2 turn and makes Badly Matching and [BLOCK] orbs not reduce damage for 3 turns.",
+                "cooldown": [ null, null ],
+            },
+        ],
+        specialName: "Tropical Country Flowers",
+        specialNotes: "#{stages}",
+        sailor: "Reduces Silence duration on this character by 3 turns",
+    },
+    2500: {//Doflamingo Raid v2
         captain: "Boosts ATK of Driven and Cerebral characters by 2.5x when HP is 50% or below, 1.5x otherwise",
         special: "Randomizes all non-matching orbs, including [BLOCK] slots and locks all orbs for 1 turn. If your Captain is a Cerebral or Driven character, increases duration of any Class/Type boosting buffs and Orb Amplification buffs by 2 turns",
         specialName: "Athlete",
     },
-    2201: {//Doflamingo Raid v2
+    2501: {//Doflamingo Raid v2
         captain: "Boosts ATK of Driven and Cerebral characters by 3x when HP is 50% or below, 1.5x otherwise",
         special: "Randomizes all non-matching orbs, including [BLOCK] slots and locks all orbs for 1 turn. If your Captain is a Cerebral or Driven character, increases duration of any Class/Type boosting buffs and Orb Amplification buffs by 2 turns",
         specialName: "Athlete",
+    },
+    2502: {//Kung Fu Luffy
+        captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",
+        special: "Deals 150x character's ATK in Typeless damage to all enemies, changes adjacent orbs into Matching Orbs, boosts ATK of all characters by 1.75x, reduces any damage received above 5,656 HP by ?% and makes PERFECTs easier to hit for 2 turns",
+        sailor: "Adds 3x character's ATK as Additional Typeless Damage",
+        specialName: "Gum-Gum Giant Rifle: Kung Fu",
+    },
+    2503: {//Kung Fu Luffy
+        captain: "Boosts ATK of all characters by 3.5x after the 2nd PERFECTs in a row, by 4x after the 5th PERFECTs in a row and boosts HP of all characters by 1.5x",
+        special: "Deals 150x character's ATK in Typeless damage to all enemies, changes adjacent orbs into Matching Orbs, boosts ATK of all characters by 1.75x, reduces any damage received above 5,656 HP by ?% and makes PERFECTs easier to hit for 2 turns",
+        sailor: "Adds 3x character's ATK as Additional Typeless Damage",
+        specialName: "Gum-Gum Giant Rifle: Kung Fu",
+        potential: [
+            {
+                "Name": "Critical Hit",
+                "description": [
+                    "Level 1: If you hit a perfect with this character, there is a ?% chance to deal ?% of this character's attack in extra damage",
+                    "Level 2: If you hit a perfect with this character, there is a ?% chance to deal ?% of this character's attack in extra damage",
+                    "Level 3: If you hit a perfect with this character, there is a ?% chance to deal ?% of this character's attack in extra damage",
+                    "Level 4: If you hit a perfect with this character, there is a ?% chance to deal ?% of this character's attack in extra damage",
+                    "Level 5: If you hit a perfect with this character, there is a ?% chance to deal ?% of this character's attack in extra damage"
+                ]
+            },
+            {
+                "Name": "Slot Bind Self-reduction",
+                "description": [
+                    "Level 1: Reduces Slot Bind duration by ? turn on this character",
+                    "Level 2: Reduces Slot Bind duration by ? turns on this character",
+                    "Level 3: Reduces Slot Bind duration by ? turns on this character",
+                    "Level 4: Reduces Slot Bind duration by ? turns on this character",
+                    "Level 5: Reduces Slot Bind duration by ? turns on this character"
+                ]
+            },
+            {
+                "Name": "Pinch Healing",
+                "description": [
+                    "Level 1: If HP is below ?% at the start of the turn, heals for ?x this character's RCV at the end of the turn each time you hit a PERFECT with this character",
+                    "Level 2: If HP is below ?% at the start of the turn, heals for ?x this character's RCV at the end of the turn each time you hit a PERFECT with this character",
+                    "Level 3: If HP is below ?% at the start of the turn, heals for ?x this character's RCV at the end of the turn each time you hit a PERFECT with this character",
+                    "Level 4: If HP is below ?% at the start of the turn, heals for ?x this character's RCV at the end of the turn each time you hit a PERFECT with this character",
+                    "Level 5: If HP is below ?% at the start of the turn, heals for ?x this character's RCV at the end of the turn each time you hit a PERFECT with this character"
+                ]
+            },
+        ]
+    },
+    2504: {//Crocodile&Daz
+        captain: {
+            "character1": "Boosts ATK of [STR] and [DEX] characters by 2.75x if they have a matching orb, by 2x otherwise and makes [TND] and [DEX] orbs \"beneficial\" to [STR] and [DEX] characters",
+            "character2": "Boosts ATK of [STR] and [DEX] characters by 2.5x and reduce damage received by 10%",
+            "combined": "Boosts ATK of [STR] and [DEX] characters by 2.75x if they have a matching orb, by 2.5x otherwise, reduce damage received by 20%, and makes [TND], [RCV], [STR] and [DEX] orbs \"beneficial\" to [STR] and [DEX] characters"
+        },
+        captainNotes: "#{beneficial}",
+        special: "Cuts the current HP of one enemy by 10%, reduces damage received by 50% for 1 turn, changes own orb into a Matching orb, boosts ATK of [STR] and [DEX] characters by 1.5x for 1 turn and becomes Crocodile & Daz for 2 turns",
+        specialNotes: "Change Action: When Change is activated, randomizes all non-matching orbs, including [BLOCK] orbs, reduces Bind duration by 1 turn",
+        specialName: "Neverending Sand and Blades",
+        sailor: {
+            "character1": "Boosts base ATK, HP and RCV of [DEX] characters by 30",
+            "character2": "Boosts base ATK, HP and RCV of [STR] characters by 30",
+            "combined": "Boosts base ATK, HP and RCV of [STR] and [DEX] characters by 50"
+        },
     },
     5000: {//Smoker&Tashigi
         captain: "Boosts ATK of [INT] and [PSY] characters by 2.5x, reduce damage received by 7% and makes [INT] and [PSY] orbs \"beneficial\" to [INT] and [PSY] characters",
@@ -31297,5 +31754,168 @@ window.details = {
                 ]
             },
         ],
+    },
+    5016: {//Whitebeard&Marco
+        captain: "Boosts ATK of PSY characters by 3.5x, boosts ATK of all other characters by 2.75x, reduce damage received by 15% and makes [PSY] orbs \"beneficial\" to all characters",
+        special: "Cuts the current HP of each enemy by 30%, recovers 20,000 HP, randomizes all orbs into either [PSY], [INT] or [RCV] orbs and becomes Whitebeard & Marco for 3 turns",
+        specialNotes: "Change Action: When Change is activated, reduces Paralysis and Silence duration by 1 turn, makes [RCV] orbs \"beneficial\" for all characters for 1 turn and changes their own orb into a [RCV] orb<br>#{beneficial}",
+        specialName: "Immortal Blue Flame Shockwave",
+        sailor: "Boosts base ATK of [PSY] and [INT] characters by 75",
+    },
+    5017: {//Whitebeard&Marco
+        captain: "Boosts ATK of PSY characters by 3.5x, boosts ATK of all other characters by 2.75x, reduce damage received by 15% and makes [PSY] orbs \"beneficial\" to all characters",
+        special: "Cuts the current HP of each enemy by 30%, recovers 20,000 HP, randomizes all orbs into either [PSY], [INT] or [RCV] orbs and becomes Whitebeard & Marco for 3 turns",
+        specialNotes: "Change Action: When Change is activated, reduces Paralysis and Silence duration by 1 turn, makes [RCV] orbs \"beneficial\" for all characters for 1 turn and changes their own orb into a [RCV] orb<br>#{beneficial}",
+        specialName: "Immortal Blue Flame Shockwave",
+        sailor: {
+            "base": "Boosts base ATK of [PSY] and [INT] characters by 75",
+            "level1": "Completely resists Paralysis and Silence on this character"
+        },
+    },
+    5018: {//Whitebeard&Marco
+        captain: "Boosts ATK of INT characters by 3.5x, boosts ATK of all other characters by 2.75x, boosts RCV of all characters by 1.25x and makes [PSY] orbs \"beneficial\" to all characters",
+        special: "Cuts the current HP of each enemy by 30%, recovers 20,000 HP, randomizes all orbs into either [PSY], [INT] or [RCV] orbs and becomes Whitebeard & Marco for 3 turns",
+        specialNotes: "Change Action: When Change is activated, reduces Paralysis and Silence duration by 1 turn, makes [RCV] orbs \"beneficial\" for all characters for 1 turn and changes their own orb into a [RCV] orb<br>#{beneficial}",
+        specialName: "Immortal Blue Flame Shockwave",
+        sailor: "Boosts base HP and RCV of [PSY] and [INT] characters by 75",
+    },
+    5019: {//Whitebeard&Marco
+        captain: "Boosts ATK of INT characters by 3.5x, boosts ATK of all other characters by 2.75x, boosts RCV of all characters by 1.25x and makes [PSY] orbs \"beneficial\" to all characters",
+        special: "Cuts the current HP of each enemy by 30%, recovers 20,000 HP, randomizes all orbs into either [PSY], [INT] or [RCV] orbs and becomes Whitebeard & Marco for 3 turns",
+        specialNotes: "Change Action: When Change is activated, reduces Paralysis and Silence duration by 1 turn, makes [RCV] orbs \"beneficial\" for all characters for 1 turn and changes their own orb into a [RCV] orb<br>#{beneficial}",
+        specialName: "Immortal Blue Flame Shockwave",
+        sailor: {
+            "base": "Boosts base HP and RCV of [PSY] and [INT] characters by 75",
+            "level1": "Completely resists Paralysis and Silence on this character"
+        },
+    },
+    5020: {//Whitebeard&Marco
+        captain: "Boosts ATK of [PSY] and [INT] characters by 4.25x, boosts ATK of all other characters by 3x, boosts RCV of all characters by 1.5x, reduce damage received by 20% and makes [PSY] and [INT] orbs \"beneficial\" to all characters",
+        special: "Cuts the current HP of each enemy by 30%, recovers 20,000 HP, randomizes all orbs into either [PSY], [INT] or [RCV] orbs and becomes Whitebeard & Marco for 3 turns",
+        specialNotes: "Change Action: When Change is activated, reduces Paralysis and Silence duration by 1 turn, makes [RCV] orbs \"beneficial\" for all characters for 1 turn and changes their own orb into a [RCV] orb<br>#{beneficial}",
+        specialName: "Immortal Blue Flame Shockwave",
+        sailor: "Boosts base ATK, HP and RCV of [PSY] and [INT] characters by 100",
+    },
+    5021: {//Whitebeard&Marco
+        captain: "Boosts ATK of [PSY] and [INT] characters by 4.25x, boosts ATK of all other characters by 3x, boosts RCV of all characters by 1.5x, reduce damage received by 20% and makes [PSY] and [INT] orbs \"beneficial\" to all characters",
+        special: "Cuts the current HP of each enemy by 30%, recovers 20,000 HP, randomizes all orbs into either [PSY], [INT] or [RCV] orbs and becomes Whitebeard & Marco for 3 turns",
+        specialNotes: "Change Action: When Change is activated, reduces Paralysis and Silence duration by 1 turn, makes [RCV] orbs \"beneficial\" for all characters for 1 turn and changes their own orb into a [RCV] orb<br>#{beneficial}",
+        specialName: "Immortal Blue Flame Shockwave",
+        sailor: "Boosts base ATK, HP and RCV of [PSY] and [INT] characters by 100",
+    },
+    5022: {//Whitebeard&Marco
+        captain: "Boosts ATK of [PSY] and [INT] characters by 4.25x, boosts ATK of all other characters by 3x, boosts RCV of all characters by 1.5x, reduce damage received by 20% and makes [PSY] and [INT] orbs \"beneficial\" to all characters",
+        special: "Cuts the current HP of each enemy by 30%, recovers 20,000 HP, randomizes all orbs into either [PSY], [INT] or [RCV] orbs and becomes Whitebeard & Marco for 3 turns",
+        specialNotes: "Change Action: When Change is activated, reduces Paralysis and Silence duration by 1 turn, makes [RCV] orbs \"beneficial\" for all characters for 1 turn and changes their own orb into a [RCV] orb<br>#{beneficial}",
+        specialName: "Immortal Blue Flame Shockwave",
+        sailor: {
+            "base": "Boosts base ATK, HP and RCV of [PSY] and [INT] characters by 100",
+            "level1": "Completely resists Paralysis and Silence on this character"
+        },
+        potential: [
+            {
+                "Name": "[PSY] Damage Reduction",
+                "description": [
+                    "Level 1: Reduce damage taken from [PSY] characters by 1%",
+                    "Level 2: Reduce damage taken from [PSY] characters by 2%",
+                    "Level 3: Reduce damage taken from [PSY] characters by 3%",
+                    "Level 4: Reduce damage taken from [PSY] characters by 5%",
+                    "Level 5: Reduce damage taken from [PSY] characters by 7%"
+                ]
+            },
+            {
+                "Name": "[INT] Damage Reduction",
+                "description": [
+                    "Level 1: Reduce damage taken from [INT] characters by 1%",
+                    "Level 2: Reduce damage taken from [INT] characters by 2%",
+                    "Level 3: Reduce damage taken from [INT] characters by 3%",
+                    "Level 4: Reduce damage taken from [INT] characters by 5%",
+                    "Level 5: Reduce damage taken from [INT] characters by 7%"
+                ]
+            },
+            {
+                "Name": "Slot Bind Self-reduction",
+                "description": [
+                    "Level 1: Reduces Slot Bind duration by 3 turn on this character",
+                    "Level 2: Reduces Slot Bind duration by 5 turn on this character",
+                    "Level 3: Reduces Slot Bind duration by 7 turn on this character",
+                    "Level 4: Reduces Slot Bind duration by 10 turn on this character",
+                    "Level 5: Reduces Slot Bind completely on this character"
+                ]
+            },
+        ],
+    },
+    5023: {//Whitebeard&Marco
+        captain: "Boosts ATK of [PSY] and [INT] characters by 4.25x, boosts ATK of all other characters by 3x, boosts RCV of all characters by 1.5x, reduce damage received by 20% and makes [PSY] and [INT] orbs \"beneficial\" to all characters",
+        special: "Cuts the current HP of each enemy by 30%, recovers 20,000 HP, randomizes all orbs into either [PSY], [INT] or [RCV] orbs and becomes Whitebeard & Marco for 3 turns",
+        specialNotes: "Change Action: When Change is activated, reduces Paralysis and Silence duration by 1 turn, makes [RCV] orbs \"beneficial\" for all characters for 1 turn and changes their own orb into a [RCV] orb<br>#{beneficial}",
+        specialName: "Immortal Blue Flame Shockwave",
+        sailor: {
+            "base": "Boosts base ATK, HP and RCV of [PSY] and [INT] characters by 100",
+            "level1": "Completely resists Paralysis and Silence on this character"
+        },
+        potential: [
+            {
+                "Name": "[PSY] Damage Reduction",
+                "description": [
+                    "Level 1: Reduce damage taken from [PSY] characters by 1%",
+                    "Level 2: Reduce damage taken from [PSY] characters by 2%",
+                    "Level 3: Reduce damage taken from [PSY] characters by 3%",
+                    "Level 4: Reduce damage taken from [PSY] characters by 5%",
+                    "Level 5: Reduce damage taken from [PSY] characters by 7%"
+                ]
+            },
+            {
+                "Name": "[INT] Damage Reduction",
+                "description": [
+                    "Level 1: Reduce damage taken from [INT] characters by 1%",
+                    "Level 2: Reduce damage taken from [INT] characters by 2%",
+                    "Level 3: Reduce damage taken from [INT] characters by 3%",
+                    "Level 4: Reduce damage taken from [INT] characters by 5%",
+                    "Level 5: Reduce damage taken from [INT] characters by 7%"
+                ]
+            },
+            {
+                "Name": "Slot Bind Self-reduction",
+                "description": [
+                    "Level 1: Reduces Slot Bind duration by 3 turn on this character",
+                    "Level 2: Reduces Slot Bind duration by 5 turn on this character",
+                    "Level 3: Reduces Slot Bind duration by 7 turn on this character",
+                    "Level 4: Reduces Slot Bind duration by 10 turn on this character",
+                    "Level 5: Reduces Slot Bind completely on this character"
+                ]
+            },
+        ],
+    },
+    5024: {//Crocodile&Daz
+        captain: "Boosts ATK of [STR] and [DEX] characters by 2.75x if they have a matching orb, by 2x otherwise and makes [TND] and [DEX] orbs \"beneficial\" to [STR] and [DEX] characters",
+        captainNotes: "#{beneficial}",
+        special: "Cuts the current HP of one enemy by 10%, reduces damage received by 50% for 1 turn, changes own orb into a Matching orb, boosts ATK of [STR] and [DEX] characters by 1.5x for 1 turn and becomes Crocodile & Daz for 2 turns",
+        specialNotes: "Change Action: When Change is activated, randomizes all non-matching orbs, including [BLOCK] orbs, reduces Bind duration by 1 turn",
+        specialName: "Neverending Sand and Blades",
+        sailor: "Boosts base ATK, HP and RCV of [DEX] characters by 30",
+    },
+    5025: {//Crocodile&Daz
+        captain: "Boosts ATK of [STR] and [DEX] characters by 2.5x and reduce damage received by 10%",
+        special: "Cuts the current HP of one enemy by 10%, reduces damage received by 50% for 1 turn, changes own orb into a Matching orb, boosts ATK of [STR] and [DEX] characters by 1.5x for 1 turn and becomes Crocodile & Daz for 2 turns",
+        specialNotes: "Change Action: When Change is activated, randomizes all non-matching orbs, including [BLOCK] orbs, reduces Bind duration by 1 turn",
+        specialName: "Neverending Sand and Blades",
+        sailor: "Boosts base ATK, HP and RCV of [STR] characters by 30",
+    },
+    5026: {//Crocodile&Daz
+        captain: "Boosts ATK of [STR] and [DEX] characters by 2.75x if they have a matching orb, by 2.5x otherwise, reduce damage received by 20%, and makes [TND], [RCV], [STR] and [DEX] orbs \"beneficial\" to [STR] and [DEX] characters",
+        captainNotes: "#{beneficial}",
+        special: "Cuts the current HP of one enemy by 10%, reduces damage received by 50% for 1 turn, changes own orb into a Matching orb, boosts ATK of [STR] and [DEX] characters by 1.5x for 1 turn and becomes Crocodile & Daz for 2 turns",
+        specialNotes: "Change Action: When Change is activated, randomizes all non-matching orbs, including [BLOCK] orbs, reduces Bind duration by 1 turn",
+        specialName: "Neverending Sand and Blades",
+        sailor: "Boosts base ATK, HP and RCV of [STR] and [DEX] characters by 50",
+    },
+    5027: {//Crocodile&Daz
+        captain: "Boosts ATK of [STR] and [DEX] characters by 2.75x if they have a matching orb, by 2.5x otherwise, reduce damage received by 20%, and makes [TND], [RCV], [STR] and [DEX] orbs \"beneficial\" to [STR] and [DEX] characters",
+        captainNotes: "#{beneficial}",
+        special: "Cuts the current HP of one enemy by 10%, reduces damage received by 50% for 1 turn, changes own orb into a Matching orb, boosts ATK of [STR] and [DEX] characters by 1.5x for 1 turn and becomes Crocodile & Daz for 2 turns",
+        specialNotes: "Change Action: When Change is activated, randomizes all non-matching orbs, including [BLOCK] orbs, reduces Bind duration by 1 turn",
+        specialName: "Neverending Sand and Blades",
+        sailor: "Boosts base ATK, HP and RCV of [STR] and [DEX] characters by 50",
     },
 };
