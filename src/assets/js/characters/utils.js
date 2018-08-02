@@ -1,6 +1,5 @@
-
-export default class Utilities {
-  static nFormatter (num, digits) {
+var CharaUtils = {}
+CharaUtils.nFormatter = function (num, digits){
     var si = [
       { value: 1, symbol: '' },
       { value: 1E3, symbol: 'k' },
@@ -18,5 +17,5 @@ export default class Utilities {
       }
     }
     return (num / si[i].value).toFixed(digits).replace(rx, '$1') + si[i].symbol
-  }
 }
+window.CharaUtils = CharaUtils;

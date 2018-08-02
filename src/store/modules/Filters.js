@@ -2,7 +2,7 @@ import units from './../../assets/js/UnitsModule'
 var _ = require('underscore')._
 
 const state = {
-  units: [],
+  vuexUnits: [],
   top_scroll: 0,
   bottom_scroll: 10,
   character_filters: {
@@ -175,7 +175,10 @@ const actions = {
 const mutations = {
   UPDATE_SCROLL (state, payload) {
     state.top_scroll = payload.top_scroll
-    state.bottom_scroll = payload.bottom_scroll
+      state.bottom_scroll = payload.bottom_scroll
+  },
+  ORDER_BY(state,payload){
+    state.vuexUnits = payload.DESC ? _.sortBy(state.vuexUnits, payload.field).reverse() :  _.sortBy(state.vuexUnits, payload.field);
   },
   CLEAR_FILTERS (state) {
     _.forEach(state.character_filters, function (filters) {
@@ -209,7 +212,7 @@ const mutations = {
     let filter = state.character_filters
     state.top_scroll = 0
     state.bottom_scroll = 10
-    state.units = _.filter(units.getUnits(), function (unit) {
+    state.vuexUnits = _.filter(units.getUnits(), function (unit) {
       let filtered = true
       // Filter
       Object.keys(filter).forEach(function (key) {
@@ -218,7 +221,12 @@ const mutations = {
             if (filter[key][i].selected === true) {
               switch (key) {
                 case 'types':
-                  filtered = filtered && filter[key][i].filter === unit['type']
+                  let types = unit['type'].split('/');
+                  if ( types.length>1){
+                    filtered = filtered && (filter[key][i].filter.includes(types[0]) || filter[key][i].filter.includes(types[1]) )
+                  }else{
+                    filtered = filtered && (filter[key][i].filter.includes(unit['type']))
+                  }
                   break
                 case 'classes':
                   if (unit['class'].split('/').length > 1) {
@@ -253,7 +261,7 @@ const getters = {
     return state.character_filters
   },
   getUnits (state) {
-    return state.units
+    return state.vuexUnits
   },
   getTop_Scroller (state) {
     return state.top_scroll
@@ -262,7 +270,7 @@ const getters = {
     return state.bottom_scroll
   },
   getUnitDetails: (state) => (id) => {
-    return units.getUnits(id)
+    return units.getUnits(id);
   }
 }
 

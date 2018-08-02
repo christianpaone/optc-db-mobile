@@ -1,8 +1,11 @@
 <template>
 <v-card>
-    <v-jumbotron dark :src="title_bg" height="auto" :gradient="getTypeColorGradient(item.type)">
+    <v-jumbotron  height="auto" :gradient="getTypeColorGradient(item.type)">
         <v-card-title class="characterTitle elevation-5">
-            <div>
+            <div class="idBadge subheading">
+                #{{item.id}}
+            </div>
+            <div class="cardName">
                 <div class="title">{{item.name}}</div>
                 <div class="body-1" v-if="item.subname!=null">{{item.subname}}</div>
             </div>
@@ -58,22 +61,15 @@
             <img :src="item.class1_image" height="40px" />
             <img v-if="item.class2_image !== null" :src="item.class2_image" height="40px" />
             <v-layout row>
-                <v-flex class="text-xs-center">
-                    <vue-stars v-if="item.stars.toString !== '5+' && item.stars.toString !== '6+'" :name="'stars-table-'+item.stars+'-'+item.id" active-color="#ffdd00" inactive-color="#999999" shadow-color="#ffff00" hover-color="#dddd00" :max="item.stars + (6 - item.stars)"
-                        :value="item.stars" readonly char="★" inactive-char="" />
-                        <vue-stars 
-                      v-if="item.stars.toString == '5+' || item.stars.toString == '6+'"
-                       :name="'bla'+item.id"
-                      active-color="#ffdd00" 
-                      inactive-color="#999999" 
-                      shadow-color="#ffff00" 
-                      hover-color="#dddd00" 
-                      :value="parseInt(item.star)"
-                      :max="parseInt(item.star)+1"
-                      readonly
-                      char="★" 
-                      inactive-char="+" 
-                      class="" />
+                <v-flex class="text-xs-center" style="font-size:15px">
+                    <span 
+                    v-for="(stars,n) in [1,2,3,4,5,6]"
+                    :key="n"
+                    >
+                        <span v-if="stars <= Number.parseInt(item.stars)" style="color:#ffdd00;">★</span>
+                        <span v-else-if="item.stars !== '5+' && item.stars !== '6+'" style="color:#999999;" >★</span>
+                    </span>
+                    <span v-if="item.stars === '5+' || item.stars === '6+'" style="color:#999999;">+</span>
                 </v-flex>
             </v-layout>
             <v-divider></v-divider>
@@ -110,15 +106,31 @@ export default {
         getTypeColorGradient: function (type) {
             switch (type) {
                 case 'STR':
-                    return 'to top right, rgb(255,0,0,.6), rgb(255,123,123,.6)';
+                    return 'to top right, rgb(255,0,0), rgb(255,123,123)';
                 case 'QCK':
-                    return 'to top right, rgb(4,62,167,.6), rgb(137,180,212,.6)'
+                    return 'to top right, rgb(4,62,167), rgb(137,180,212)';
                 case 'DEX':
-                    return 'to top right, rgb(49,85,39,.6), rgb(78,138,62,.6)'
+                    return 'to top right, rgb(49,85,39), rgb(78,138,62)';
                 case 'INT':
-                    return 'to top right, rgb(178,0,152,.6), rgb(217,72,255,.6)'
+                    return 'to top right, rgb(178,0,152), rgb(217,72,255)';
                 case 'PSY':
-                    return 'to top left, rgb(255,220,9,.6), rgb(255,244,135,.6)'
+                    return 'to top left,rgb(255,226,5), rgb(255,195,11)';
+                case 'STR/QCK':
+                    return 'to  right, rgb(255,0,0), rgb(137,180,212)';
+                case 'STR/DEX':
+                    return 'to right, rgb(255,0,0), rgb(78,138,62)';
+                case 'QCK/STR':
+                    return 'to right, rgb(4,62,167), rgb(255,0,0)';
+                case 'QCK/DEX':
+                    return 'to right, rgb(4,62,167), rgb(78,138,62)';
+                case 'DEX/STR':
+                    return 'to right, rgb(49,85,39), rgb(255,123,123)';
+                case 'DEX/QCK':
+                    return 'to right, rgb(49,85,39), rgb(4,62,167)';
+                case 'INT/PSY':
+                    return 'to right, rgb(178,0,152),rgb(255,226,5)';
+                case 'PSY/INT':
+                    return 'to right,rgb(255,226,5),rgb(217,72,255)';
             }
         }
     }
@@ -136,10 +148,6 @@ export default {
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.cardimage {
-    border-bottom-left-radius: 5px;
-}
-
 .classType-card {
     margin-top: 11px;
 }
@@ -151,5 +159,14 @@ export default {
 
 .height-3 {
     height: 25%;
+}
+
+.idBadge{
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    margin-top: -15px;
+    margin-bottom: 5px;
+    text-align: center;
 }
 </style>

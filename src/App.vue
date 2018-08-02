@@ -1,6 +1,9 @@
 <template>
   <v-app :dark="theme">
-    <v-toolbar app>
+    <v-toolbar app 
+      color="primary"
+      dark
+      flat >
       <v-toolbar-side-icon v-on:click.native.stop="drawerToggle" v-if="!blockDrawer"></v-toolbar-side-icon>
       <v-spacer></v-spacer>
       <v-toolbar-items>
@@ -19,7 +22,6 @@
     <v-navigation-drawer 
       v-model="drawer"
       v-if="characterDrawer"
-      touchless
       fixed
       temporary
       clipped
@@ -36,6 +38,7 @@
 <script>
 import Vue from "vue";
 import CharacterDrawer from "./components/CharacterDrawer.vue";
+
 export default {
   name: "optc-db-app",
   components: {
@@ -73,9 +76,8 @@ export default {
     toggleDrawer: function() {
       this.$store.commit("TOGGLE_DRAWER");
     },
-    drawerToggle:function(){
+    drawerToggle: function() {
       this.drawer = !this.drawer;
-        this.toggleClass("mainContent", "over")
     },
     toggleClass: function(id, className) {
       const el = document.getElementById(id);
@@ -102,15 +104,22 @@ export default {
     },
     onBackKeyDown() {
       // Handle the back-button event on Android. By default it will exit the app.
-      navigator.app.exitApp();
+      if (cordova.platformId !== "windows") {
+        return;
+      }
+      if (window.location.href !== firstPageUrl) {
+        window.history.back();
+      } else {
+        throw new Error("Exit"); // This will suspend the app
+      }
     }
   }
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons');
-@import url('./../node_modules/animate.css/animate.css');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons");
+@import url("./../node_modules/animate.css/animate.css");
 body {
   padding-top: constant(safe-area-inset-top);
   padding-top: env(safe-area-inset-top);
@@ -119,8 +128,9 @@ body {
   /* Apply this to v-bottom-nav if necessary. */
   margin-bottom: constant(safe-area-inset-bottom);
   margin-bottom: env(safe-area-inset-bottom);
-}html {
--ms-touch-action: manipulation;
-touch-action: manipulation;
+}
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }
 </style>

@@ -186,11 +186,6 @@ body {
     position: relative;
     top: 1px;
 }
-
-.block-icon:before {
-    content: "\e902";
-}
-
 .home-button {
     font-size: 60px;
 }

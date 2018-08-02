@@ -1,6 +1,6 @@
 <template>
       <v-list class="nomargin">
-        <v-list-tile class="clearFilters" v-on:click.native.stop="clearFilters">
+        <v-list-tile v-on:click.stop="clearFilters" class="clearFilters">
           <v-list-tile-content>
             <v-list-tile-title  class="text-xs-center">CLEAR FILTERS</v-list-tile-title>
           </v-list-tile-content>
@@ -12,7 +12,7 @@
                v-for="(item,i) in Types"
                :key="i+'-type'"
                :class="item.width"
-               v-on:click.native.stop="setTypeFilter(i)"
+                v-on:click.stop="setTypeFilter(i)"
             >
                 <v-list-tile class="filter" v-bind:class="item.filter+' '+item.active">    
                 <v-list-tile-content>
@@ -26,8 +26,8 @@
           <v-flex
                v-for="(item,i) in Classes"
                :key="i+'-class'"
-               :class="item.width"
-               v-on:click.native.stop="setClassFilter(i)"
+               :class="item.width"               
+               v-on:click.stop="setClassFilter(i)"
             >
                 <v-list-tile class="filter" v-bind:class="item.filter+' '+item.active">    
                 <v-list-tile-content>
@@ -42,7 +42,7 @@
                v-for="(item,i) in Stars"
                :key="i+'-stars'"
                :class="item.width"
-               v-on:click.native.stop="setStarsFilter(i)"
+               v-on:click.stop="setStarsFilter(i)"
             >
             <v-list-tile class="filter" v-bind:class="item.active">    
                 <v-list-tile-content class="text-xs-center">
@@ -99,12 +99,12 @@
 import vuestars from "vue-stars";
 export default {
   components: {
-    "vue-stars": vuestars,
+    "vue-stars": vuestars
   },
   data: function() {
     return {
       name: "CharacterDrawer",
-      maxstars:6,
+      maxstars: 6
     };
   },
   computed: {
@@ -133,16 +133,17 @@ export default {
       }
     },
     Cost: {
-      get(){
+      get() {
         return this.$store.getters.getCharacterFilter.cost.slider;
       },
-      set(input){
+      set(input) {
         this.$store.commit("UPDATE_COST_FILTER", input);
       }
     }
   },
   methods: {
     clearFilters: function() {
+      document.documentElement.scrollTop = 0;
       this.$store.commit("CLEAR_FILTERS");
     },
     setTypeFilter: function(i) {
@@ -154,7 +155,7 @@ export default {
     setStarsFilter: function(i) {
       this.Stars = i;
     },
-    setCostFilter:function(input){
+    setCostFilter: function(input) {
       this.Cost = input;
     }
   }
@@ -163,7 +164,7 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons");
 @import url("./../assets/css/custom.css");
-.cost{
-  height:65px; 
+.cost {
+  height: 65px;
 }
 </style>
